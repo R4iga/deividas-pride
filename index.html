@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub - Your Game Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎮 Game Hub</h1>
+            <p>Discover and download amazing games</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Games</button>
+            <button class="filter-btn" data-filter="action">Action</button>
+            <button class="filter-btn" data-filter="adventure">Adventure</button>
+            <button class="filter-btn" data-filter="puzzle">Puzzle</button>
+            <button class="filter-btn" data-filter="strategy">Strategy</button>
+        </div>
+
+        <div class="games-grid" id="gamesGrid">
+            <!-- Games will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <img id="modalImage" src="" alt="">
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <div class="modal-meta">
+                        <span id="modalGenre" class="genre-tag"></span>
+                        <span id="modalRating" class="rating"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription"></p>
+                <div class="modal-details">
+                    <div class="detail-item">
+                        <strong>Developer:</strong>
+                        <span id="modalDeveloper"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Release Date:</strong>
+                        <span id="modalReleaseDate"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Platform:</strong>
+                        <span id="modalPlatform"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Size:</strong>
+                        <span id="modalSize"></span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <a id="modalDownloadLink" href="#" class="download-btn" target="_blank">
+                        📥 Download Now
+                    </a>
+                    <button class="wishlist-btn">❤️ Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
