@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deividas - Pride & Joy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff1493, #ff69b4, #ffb6c1, #ffc0cb, #ff1493, #ff69b4, #ffb6c1, #ffc0cb, #ff1493);
+            background-size: 600% 600%;
+            animation: gradient 5s ease infinite, pulse 2s ease-in-out infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background: linear-gradient(45deg, #ff1493, #ff69b4, #ffb6c1, #ffc0cb, #ff1493, #ff69b4, #ffb6c1); }
+            100% { background-position: 100% 50%; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+        
+        @keyframes flagWave {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        
+        @keyframes stripeGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        
+        .deividas {
+            font-size: 8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-bottom: 2rem;
+            animation: rainbow 1s linear infinite, sparkle 2s ease-in-out infinite;
+            background: linear-gradient(90deg, #ff1493, #ff69b4, #ffb6c1, #ffc0cb, #ff1493, #ff69b4, #ffb6c1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: rainbow 1s linear infinite, sparkle 2s ease-in-out infinite, bounce 3s ease-in-out infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 10px rgba(255,20,147,0.8)); }
+            50% { filter: brightness(1.3) drop-shadow(0 0 30px rgba(255,20,147,1)); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            25% { transform: translateY(-10px) scale(1.05); }
+            50% { transform: translateY(0) scale(1.1); }
+            75% { transform: translateY(-5px) scale(1.05); }
+        }
+        
+        .subtitle {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .pride-flag {
+            display: flex;
+            width: 400px;
+            height: 250px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(255,20,147,0.6);
+            margin-bottom: 3rem;
+            animation: flagWave 3s ease-in-out infinite;
+        }
+        
+        .stripe {
+            flex: 1;
+        }
+        
+        .stripe:nth-child(1) { background: #ff1493; animation: stripeGlow 2s ease-in-out infinite; }
+        .stripe:nth-child(2) { background: #ff69b4; animation: stripeGlow 2s ease-in-out infinite 0.3s; }
+        .stripe:nth-child(3) { background: #ffb6c1; animation: stripeGlow 2s ease-in-out infinite 0.6s; }
+        .stripe:nth-child(4) { background: #ffc0cb; animation: stripeGlow 2s ease-in-out infinite 0.9s; }
+        .stripe:nth-child(5) { background: #ff1493; animation: stripeGlow 2s ease-in-out infinite 1.2s; }
+        .stripe:nth-child(6) { background: #ff69b4; animation: stripeGlow 2s ease-in-out infinite 1.5s; }
+        .stripe:nth-child(7) { background: #ffb6c1; animation: stripeGlow 2s ease-in-out infinite 1.8s; }
+        
+        .deividas-everywhere {
+            position: fixed;
+            color: white;
+            font-weight: bold;
+            pointer-events: none;
+            animation: float 10s infinite ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        @keykey float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(-5deg); }
+            75% { transform: translateY(20px) rotate(3deg); }
+        }
+        
+        .deividas-1 { top: 5%; left: 5%; animation-delay: 0s; font-size: 1.5rem; }
+        .deividas-2 { top: 15%; right: 10%; animation-delay: 0.5s; font-size: 1.2rem; }
+        .deividas-3 { bottom: 10%; left: 15%; animation-delay: 1s; font-size: 1.8rem; }
+        .deividas-4 { bottom: 20%; right: 5%; animation-delay: 1.5s; font-size: 1.3rem; }
+        .deividas-5 { top: 40%; left: 40%; animation-delay: 2s; font-size: 1.6rem; }
+        .deividas-6 { top: 8%; left: 80%; animation-delay: 2.5s; font-size: 1.4rem; }
+        .deividas-7 { top: 70%; left: 10%; animation-delay: 3s; font-size: 1.7rem; }
+        .deividas-8 { top: 30%; right: 30%; animation-delay: 3.5s; font-size: 1.5rem; }
+        .deividas-9 { bottom: 5%; left: 50%; animation-delay: 4s; font-size: 1.3rem; }
+        .deividas-10 { top: 60%; right: 15%; animation-delay: 4.5s; font-size: 1.6rem; }
+        
+        .heart {
+            color: #ff1493;
+            font-size: 3rem;
+            animation: heartbeat 1s ease-in-out infinite, heartFloat 2s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+        
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .message {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="deividas">DEIVIDAS</h1>
+        <p class="subtitle">Pride & Joy</p>
+        
+        <div class="pride">
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+        </div>
+        
+        <div class="heart">❤️</div>
+        <div class="heart" style="animation-delay: 0.5s;">💖</div>
+        <div class="heart" style="animation-delay: 1s;">💝</div>
+        <div class="heart" style="animation-delay: 1.5s;">💗</div>
+        <p class="message">Celebrating Deividas with Pride!</p>
+    </div>
+    
+<div class="deividas-everywhere deividas-1">Deividas</div>
+        <div class="deividas-everywhere deividas-2">Deividas</div>
+        <div class="deividas-everywhere deividas-3">Deividas</div>
+        <div class="deividas-everywhere deividas-4">Deividas</div>
+        <div class="deividas-everywhere deividas-5">Deividas</div>
+        <div class="deividas-everywhere deividas-6">Deividas</div>
+        <div class="deividas-everywhere deividas-7">Deividas</div>
+        <div class="deividas-everywhere deividas-8">Deividas</div>
+        <div class="deividas-everywhere deividas-9">Deividas</div>
+        <div class="deividas-everywhere deividas-10">Deividas</div>
+</body>
+</html>
